@@ -13,7 +13,7 @@ export default function Sales() {
   useEffect(() => {
     const fetchSales = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8000/sales");
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/sales`);
         setSales(res.data);
       } catch (err) {
         console.error(err);

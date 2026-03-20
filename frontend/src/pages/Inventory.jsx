@@ -9,7 +9,7 @@ export default function Inventory() {
     // 🔥 Fetch inventory list
     const fetchInventory = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8000/inventory");
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/inventory`);
         setInventory(res.data);
       } catch (err) {
         console.error(err);
@@ -20,7 +20,7 @@ export default function Inventory() {
     const fetchOverview = async () => {
       try {
         const res = await axios.get(
-          "http://127.0.0.1:8000/inventory/overview"
+          `${import.meta.env.VITE_API_BASE_URL}/inventory/overview`
         );
         setOverview(res.data);
       } catch (err) {

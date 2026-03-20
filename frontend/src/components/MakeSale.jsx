@@ -20,7 +20,7 @@ const [paymentMethod, setPaymentMethod] = useState("");
 
     console.log(payload); // debug
 
-    await axios.post("http://127.0.0.1:8000/sales", payload);
+    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/sales`, payload);
 
     alert("Sale completed ✅");
 
@@ -40,7 +40,7 @@ const [paymentMethod, setPaymentMethod] = useState("");
   const searchMedicine = async () => {
     try {
       const res = await axios.get(
-        "http://127.0.0.1:8000/inventory/search",
+        `${import.meta.env.VITE_API_BASE_URL}/inventory/search`,
         {
           params: { search: query },
         }

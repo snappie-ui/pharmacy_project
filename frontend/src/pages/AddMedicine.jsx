@@ -25,7 +25,7 @@ export default function AddMedicine({ onBack }) {
   // submit form
   const handleSubmit = async () => {
     try {
-      await axios.post("http://127.0.0.1:8000/medicine", {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/medicine`, {
         ...form,
         quantity: Number(form.quantity),
         cost_price: Number(form.cost_price),

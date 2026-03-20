@@ -9,7 +9,7 @@ export default function Dashboard({ onAddMedicine}) {
   useEffect(() => {
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/dashboard");
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/dashboard`);
       setDashboard(res.data);
     } catch (err) {
       console.error(err);
